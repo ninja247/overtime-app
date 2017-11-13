@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     
     def create
         @posts = Post.new(post_params)
+        @posts.user_id = current_user.id
 
         if @post.save
             redirect_to, notice: 'Your post was created successfully'

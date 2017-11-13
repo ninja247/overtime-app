@@ -1,5 +1,4 @@
 # spec/rails_helper.rb
-#ac copied from module instructions
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -8,6 +7,9 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+
+include Warden::Test::Helpers
+Warden.test_mode!
 
 ActiveRecord::Migration.maintain_test_schema!
 
