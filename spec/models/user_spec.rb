@@ -16,5 +16,14 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
       
     end
+
+
+    # spec/models/user_spec.rb
+
+    describe "custom name methods" do
+      it 'has a full name method that combines first and last name' do
+        expect(@user.full_name).to eq("SNOW, JON")
+      end
+    end
   end
 end
